@@ -1,0 +1,1 @@
+insert into admin_login (username, password) values ('admin','bookmycars');
