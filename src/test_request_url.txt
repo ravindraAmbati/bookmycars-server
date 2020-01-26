@@ -1,0 +1,9 @@
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/adminLogin/read - read data from adminlogin table
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/adminLogin/create - create table and insert test data
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/adminLogin/test - test request on adminlogin
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/adminLogin/drop - drop table
+
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/read - read data from booking table
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/create - create table and insert test data
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/test - test request on booking
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/drop - drop table
