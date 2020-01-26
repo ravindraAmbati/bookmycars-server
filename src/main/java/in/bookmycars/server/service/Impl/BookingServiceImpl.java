@@ -27,4 +27,13 @@ public class BookingServiceImpl implements BookingService {
             return error;
         }
     }
+
+    @Override
+    public String bookAndReturnId(Booking booking) {
+        try{
+            return "successfully "+booked+ " with booking id: "+ repo.saveAndReturnId(booking);
+        } catch (Exception e){
+            return error;
+        }
+    }
 }

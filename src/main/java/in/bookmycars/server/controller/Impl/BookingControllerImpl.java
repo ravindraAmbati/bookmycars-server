@@ -32,4 +32,10 @@ public class BookingControllerImpl implements BookingController {
     public String book(@RequestBody Booking booking) {
         return service.book(booking);
     }
+
+    @Override
+        @PostMapping(path = "/bookAndReturnId",consumes = "application/json",produces = "application/json")
+    public String bookAndReturnId(@RequestBody Booking booking) {
+        return service.bookAndReturnId(booking);
+    }
 }

@@ -13,4 +13,6 @@ public interface BookingService {
     List<Booking> findAll();
 
     String book(Booking booking);
+
+    String bookAndReturnId(Booking booking);
 }

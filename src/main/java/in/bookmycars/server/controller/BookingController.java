@@ -13,4 +13,6 @@ public interface BookingController {
     List<Booking> bookings();
 
     String book(Booking booking);
+
+    String bookAndReturnId(Booking booking);
 }
