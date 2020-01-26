@@ -6,6 +6,8 @@ import in.bookmycars.server.service.AdminLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/adminLogin")
 @CrossOrigin("http://localhost:3000")
@@ -24,5 +26,17 @@ public class AdminLoginControllerImpl implements AdminLoginController {
     @PostMapping(path = "/validate", consumes = "application/json", produces = "application/json")
     public String isValidUser(@RequestBody AdminLogin adminLogin) {
         return service.validate(adminLogin.getUsername(), adminLogin.getPassword());
+    }
+
+    @Override
+    @GetMapping("/create")
+    public List<AdminLogin> create(){
+        return service.create();
+    }
+
+    @Override
+    @GetMapping("/drop")
+    public String drop() {
+        return service.drop();
     }
 }

@@ -34,8 +34,20 @@ public class BookingControllerImpl implements BookingController {
     }
 
     @Override
-        @PostMapping(path = "/bookAndReturnId",consumes = "application/json",produces = "application/json")
+    @PostMapping(path = "/bookAndReturnId",consumes = "application/json",produces = "application/json")
     public String bookAndReturnId(@RequestBody Booking booking) {
         return service.bookAndReturnId(booking);
+    }
+
+    @Override
+    @GetMapping("/create")
+    public List<Booking> create(){
+        return service.create();
+    }
+
+    @Override
+    @GetMapping("/drop")
+    public String drop() {
+        return service.drop();
     }
 }

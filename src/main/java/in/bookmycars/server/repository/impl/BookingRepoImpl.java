@@ -2,6 +2,7 @@ package in.bookmycars.server.repository.impl;
 
 import in.bookmycars.server.component.Booking;
 import in.bookmycars.server.repository.BookingRepo;
+import in.bookmycars.server.repository.mapper.AdminLoginMapper;
 import in.bookmycars.server.repository.mapper.BookingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -23,12 +24,12 @@ public class BookingRepoImpl implements BookingRepo {
 
     @Override
     public List<Booking> readAll() {
-        return jdbcTemplate.query(readAll, new BookingMapper());
+        return jdbcTemplate.query(readAllSQL, new BookingMapper());
     }
 
     @Override
     public boolean save(Booking booking) {
-        return 1 == jdbcTemplate.update(save,booking.getSource(),booking.getDestination(),booking.getStartDate(),booking.getEndDate(),booking.getPickupTime(),booking.getName(),booking.getContactNo());
+        return 1 == jdbcTemplate.update(saveSQL,booking.getSource(),booking.getDestination(),booking.getStartDate(),booking.getEndDate(),booking.getPickupTime(),booking.getName(),booking.getContactNo());
     }
 
     @Override
@@ -37,7 +38,7 @@ public class BookingRepoImpl implements BookingRepo {
         jdbcTemplate.update(new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-                PreparedStatement statement = con.prepareStatement(saveAndReturnId, Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement statement = con.prepareStatement(saveAndReturnIdSQL, Statement.RETURN_GENERATED_KEYS);
                 statement.setString(1, booking.getSource());
                 statement.setString(2, booking.getDestination());
                 statement.setString(3, booking.getStartDate());
@@ -51,4 +52,18 @@ public class BookingRepoImpl implements BookingRepo {
 
         return holder.getKey().toString();
     }
+
+    @Override
+    public List<Booking> create() {
+        jdbcTemplate.execute(createSQL);
+        jdbcTemplate.execute(insertTestDataSQL);
+        return jdbcTemplate.query(selectTestDataSQL,new BookingMapper());
+    }
+
+    @Override
+    public String drop() {
+        jdbcTemplate.execute(dropSQL);
+        return drop;
+    }
+
 }

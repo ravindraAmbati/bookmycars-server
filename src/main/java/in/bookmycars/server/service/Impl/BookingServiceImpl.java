@@ -36,4 +36,14 @@ public class BookingServiceImpl implements BookingService {
             return error;
         }
     }
+
+    @Override
+    public List<Booking> create() {
+        return repo.create();
+    }
+
+    @Override
+    public String drop() {
+        return repo.drop();
+    }
 }

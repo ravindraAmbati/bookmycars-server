@@ -4,7 +4,7 @@ import in.bookmycars.server.component.Booking;
 
 import java.util.List;
 
-public interface BookingController {
+public interface BookingController extends Controller<Booking> {
 
     String welcome = "WELCOME ";
 

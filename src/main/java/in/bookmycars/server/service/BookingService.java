@@ -4,7 +4,7 @@ import in.bookmycars.server.component.Booking;
 
 import java.util.List;
 
-public interface BookingService {
+public interface BookingService extends Service<Booking> {
 
     String booked = "BOOKED";
     String notBooked = "NOT BOOKED";

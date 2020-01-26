@@ -2,11 +2,11 @@ package in.bookmycars.server.controller;
 
 import in.bookmycars.server.component.AdminLogin;
 
-public interface AdminLoginController {
+public interface AdminLoginController extends Controller<AdminLogin> {
 
     String welcome = "WELCOME ";
 
-    public String test();
+    String test();
 
-    public String isValidUser(AdminLogin loginUser);
+    String isValidUser(AdminLogin loginUser);
 }

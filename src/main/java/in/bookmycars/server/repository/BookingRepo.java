@@ -4,12 +4,30 @@ import in.bookmycars.server.component.Booking;
 
 import java.util.List;
 
-public interface BookingRepo {
+public interface BookingRepo extends Repo<Booking>{
 
-    String readAll = "select * from booking";
-    String save = "insert into booking (source,destination,startDate,endDate,pickupTime,name,contactNo)\n" +
+    String createSQL = "CREATE TABLE booking(\n" +
+            "\tid SERIAL PRIMARY KEY,\n" +
+            "\tsource VARCHAR NOT NULL,\n" +
+            "\tdestination VARCHAR NOT NULL,\n" +
+            "\tstartDate VARCHAR NOT NULL,\n" +
+            "\tendDate VARCHAR,\n" +
+            "\tpickupTime VARCHAR,\n" +
+            "\tname VARCHAR NOT NULL,\n" +
+            "\tcontactNo VARCHAR NOT NULL\n" +
+            ");";
+
+    String dropSQL = "drop table booking";
+
+    String insertTestDataSQL = "insert into booking (source,destination,startDate,endDate,pickupTime,name,contactNo)\n" +
+            "values ('sourceTest','destinationTest','startDateTest','endDateTest','pickupTimeTest','nameTest','contactNoTest');";
+
+    String selectTestDataSQL = "select * from booking";
+
+    String readAllSQL = "select * from booking";
+    String saveSQL = "insert into booking (source,destination,startDate,endDate,pickupTime,name,contactNo)\n" +
             "values (?,?,?,?,?,?,?);";
-    String saveAndReturnId = "insert into booking (source,destination,startDate,endDate,pickupTime,name,contactNo)\n" +
+    String saveAndReturnIdSQL = "insert into booking (source,destination,startDate,endDate,pickupTime,name,contactNo)\n" +
             "values (?,?,?,?,?,?,?)\n" +
             "returning id;";
 

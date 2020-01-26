@@ -1,8 +1,15 @@
 package in.bookmycars.server.service;
 
-public interface AdminLoginService {
+import in.bookmycars.server.component.AdminLogin;
+
+import java.util.List;
+
+public interface AdminLoginService extends Service<AdminLogin> {
     String valid = "VALID";
     String inValid = "INVALID";
     String error = "ERROR";
-    public String validate(String username, String password);
+
+    String validate(String username, String password);
+
+    List<AdminLogin> create();
 }
