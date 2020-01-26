@@ -46,4 +46,9 @@ public class BookingServiceImpl implements BookingService {
     public String drop() {
         return repo.drop();
     }
+
+    @Override
+    public List<Booking> readAllData() {
+        return repo.readAllData();
+    }
 }

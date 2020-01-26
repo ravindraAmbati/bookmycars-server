@@ -50,4 +50,9 @@ public class AdminLoginRepoImpl implements AdminLoginRepo {
         return drop;
     }
 
+    @Override
+    public List<AdminLogin> readAllData() {
+        return jdbcTemplate.query(selectTestDataSQL,new AdminLoginMapper());
+    }
+
 }

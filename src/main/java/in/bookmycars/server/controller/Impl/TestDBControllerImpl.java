@@ -14,7 +14,7 @@ public class TestDBControllerImpl implements TestDBController {
     @Autowired
     TestDBService service;
 
-    @GetMapping("/currentTime")
+    @GetMapping("/time")
     @Override
     public String getCurrentTime() {
         return service.getCurrentTime();

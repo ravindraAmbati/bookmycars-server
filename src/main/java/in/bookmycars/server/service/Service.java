@@ -7,4 +7,6 @@ public interface Service<T> {
     List<T> create();
 
     String drop();
+
+    List<T> readAllData();
 }

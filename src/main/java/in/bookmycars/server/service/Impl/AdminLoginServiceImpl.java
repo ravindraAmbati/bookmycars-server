@@ -34,4 +34,11 @@ public class AdminLoginServiceImpl implements AdminLoginService {
     public String drop() {
         return repo.drop();
     }
+
+    @Override
+    public List<AdminLogin> readAllData() {
+        return repo.readAllData();
+    }
+
+
 }

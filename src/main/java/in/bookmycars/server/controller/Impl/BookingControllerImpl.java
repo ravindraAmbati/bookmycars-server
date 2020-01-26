@@ -50,4 +50,11 @@ public class BookingControllerImpl implements BookingController {
     public String drop() {
         return service.drop();
     }
+
+    @Override
+    @GetMapping("/read")
+    public List<Booking> readAllData() {
+        return service.readAllData();
+    }
+
 }

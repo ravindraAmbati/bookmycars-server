@@ -10,4 +10,6 @@ public interface Repo<T> {
     List<T> create();
 
     String drop();
+
+    List<T> readAllData();
 }

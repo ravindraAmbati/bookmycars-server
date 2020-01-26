@@ -66,4 +66,9 @@ public class BookingRepoImpl implements BookingRepo {
         return drop;
     }
 
+    @Override
+    public List<Booking> readAllData() {
+        return jdbcTemplate.query(selectTestDataSQL,new BookingMapper());
+    }
+
 }

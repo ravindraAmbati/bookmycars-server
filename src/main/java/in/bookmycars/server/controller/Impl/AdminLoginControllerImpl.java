@@ -39,4 +39,10 @@ public class AdminLoginControllerImpl implements AdminLoginController {
     public String drop() {
         return service.drop();
     }
+
+    @Override
+    @GetMapping("/read")
+    public List<AdminLogin> readAllData() {
+        return service.readAllData();
+    }
 }
