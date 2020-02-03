@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/booking")
+@CrossOrigin("http://localhost:3000")
 public class BookingControllerImpl implements BookingController {
 
     @Autowired
@@ -54,7 +55,7 @@ public class BookingControllerImpl implements BookingController {
                     "<td>"+booking.getName()+"</td>" +
                     "<td>"+booking.getContactNo()+"</td>" +
                     "</tr>";
-            bookingBody = ""+row;
+            bookingBody = bookingBody+""+row;
         }
         return "<html>" +
                 "<head></head>" +
