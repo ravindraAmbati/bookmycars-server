@@ -40,6 +40,43 @@ public class BookingControllerImpl implements BookingController {
     }
 
     @Override
+    @GetMapping("/view")
+    public String bookingsView() {
+        String bookingBody = "";
+        for (Booking booking: bookings()){
+            String row = "<tr>" +
+                    "<td>"+booking.getId()+"</td>" +
+                    "<td>"+booking.getSource()+"</td>" +
+                    "<td>"+booking.getDestination()+"</td>" +
+                    "<td>"+booking.getStartDate()+"</td>" +
+                    "<td>"+booking.getEndDate()+"</td>" +
+                    "<td>"+booking.getPickupTime()+"</td>" +
+                    "<td>"+booking.getName()+"</td>" +
+                    "<td>"+booking.getContactNo()+"</td>" +
+                    "</tr>";
+            bookingBody = ""+row;
+        }
+        return "<html>" +
+                "<head></head>" +
+                "<body>" +
+                "<table>" +
+                "<tr>" +
+                "<th>ID</th>" +
+                "<th>Source</th>" +
+                "<th>Destination</th>" +
+                "<th>Journey Date</th>" +
+                "<th>Return Date</th>" +
+                "<th>Pick Time</th>" +
+                "<th>Name</th>" +
+                "<th>Contact Number</th>" +
+                "</tr>" +
+                bookingBody +
+                "<table>" +
+                "</body>" +
+                "</html>";
+    }
+
+    @Override
     @GetMapping("/create")
     public List<Booking> create(){
         return service.create();

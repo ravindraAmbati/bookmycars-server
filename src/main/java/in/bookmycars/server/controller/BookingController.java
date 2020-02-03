@@ -15,4 +15,6 @@ public interface BookingController extends Controller<Booking> {
     String book(Booking booking);
 
     String bookAndReturnId(Booking booking);
+
+    String bookingsView();
 }
