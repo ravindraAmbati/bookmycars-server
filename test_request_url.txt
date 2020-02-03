@@ -7,3 +7,4 @@ http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/read - read data 
 http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/create - create table and insert test data
 http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/test - test request on booking
 http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/drop - drop table
+http://bookmycars-test.ap-south-1.elasticbeanstalk.com/booking/view - bookings in html table view
